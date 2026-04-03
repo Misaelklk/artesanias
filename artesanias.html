@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artesanías Tradicionales - Catálogo</title>
+    <link rel="stylesheet" href="artesanias.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <i class="fas fa-seedling"></i>
+                    <span>Arte Salgado</span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#inicio" class="nav-link">Inicio</a></li>
+                    <li><a href="#categorias" class="nav-link">Categorías</a></li>
+                    <li><a href="#productos" class="nav-link">Productos</a></li>
+                    <li><a href="#contacto" class="nav-link">Contacto</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <h1>Artesanías que Cuentan Historias</h1>
+            <p>Descubre la magia del Arte con cada pieza.</p>
+            <button class="cta-button" onclick="scrollToSection('productos')">
+                <i class="fas fa-shopping-bag"></i> Explorar Catálogo
+            </button>
+        </div>
+    </section>
+
+    <!-- Categorías -->
+    <section id="categorias" class="categories">
+        <div class="container">
+            <h2 class="section-title">Nuestras Categorías</h2>
+            <div class="categories-grid">
+                <div class="category-card" data-category="BioFiltros">
+                    <i class="fa-solid fa-droplet"></i>
+                    <h3>BioFiltros</h3>
+                    <p>Hidratacion Genuina y Saludable</p>
+                </div>
+                <div class="category-card" data-category="Ceramica Decorativa">
+                    <i class="fas fa-palette"></i>
+                    <h3>Cerámica Decorativa.</h3>
+                    <p>Ceramica para interiores y exteriores.</p>
+                </div>
+                
+                <div class="category-card" data-category="Esculturas.">
+                    <i class="fas fa-cube"></i>
+                    <h3>Esculturas</h3>
+                    <p>Elaboradas en Barro, Recina, Concreto y Yeso.</p>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Productos -->
+    <section id="productos" class="products">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Catálogo de Artesanías</h2>
+                <div class="filters">
+                    <select id="categoryFilter" onchange="filterProducts()">
+                        <option value="all">Todas las categorías</option>
+                    </select>
+                    <input type="text" id="searchInput" placeholder="Buscar artesanía..." onkeyup="filterProducts()">
+                    <button onclick="filterProducts()">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="products-grid" id="productsGrid">
+                <!-- Los productos se cargan dinámicamente con JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal Producto -->
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="contacto" class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Arte Salgado</h3>
+                    <p>Artesanias que cuentan Historias.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <p><i class="fas fa-phone"></i> +505 5766 3047</p>
+                    <p><i class="fas fa-envelope"></i> artesalgado@gmail.com</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Síguenos</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Arte Salgado. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="artesanias.js"></script>
+</body>
+</html>
